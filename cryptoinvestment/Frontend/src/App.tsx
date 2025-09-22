@@ -4,7 +4,7 @@ import { ChartComponent } from "./components/ChartView";
 function App() {
   return (
     <>
-      <main className="pt-10">
+      <main className="p-5 ">
         <section>
           <ChartComponent />
         </section>

@@ -1,6 +1,7 @@
 import { AreaSeries, createChart, ColorType } from "lightweight-charts";
-import { useEffect, useRef } from "react";
-import { type ChartComponentProps } from "../Type";
+import { useEffect, useRef, useState } from "react";
+import { fetchCryptoData } from "../services/CryptoServices";
+import { type ChartComponentProps, type CryptoData } from "../Type";
 
 export const ChartComponent = (props: ChartComponentProps) => {
   const {
@@ -15,6 +16,7 @@ export const ChartComponent = (props: ChartComponentProps) => {
   } = props;
 
   const chartContainerRef = useRef<HTMLDivElement>(null);
+  const [cryptoData, setCryptoData] = useState<CryptoData[]>([]);
 
   useEffect(() => {
     const handleResize = () => {
